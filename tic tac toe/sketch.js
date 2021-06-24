@@ -95,7 +95,7 @@ function draw() {
   let result = checkWinner();
   if(result != null){
     noLoop();  
-    createP(result).style('color','#FFF').style('font-size','32pt');
+    createP(result).style('color','#000').style('font-size','32pt');
   }else{
     nextTurn();
   }
