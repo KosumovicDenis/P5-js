@@ -11,6 +11,8 @@ let available = [];
 
 function setup() {
   createCanvas(400, 400);
+  textSize(32);
+  strokeWeight(4);
   frameRate(1);
   currentPlayer = floor(random(players.length));
     for(let j = 0; j<3; j++){
@@ -29,23 +31,23 @@ function checkWinner() {
   //horizontal
   for(let i= 0; i < 3; i++){
     if(equals(board[i][0], board[i][1], board[i][2]))
-      winner = board[i][0];
+      winner = "The winner is: " +  board[i][0];
   }
   //vertical
   for(let i= 0; i < 3; i++){
     if(equals(board[0][i], board[1][i], board[2][i]))
-      winner = board[0][i];
+      winner = "The winner is: " + board[0][i];
   }
   //Diagonal
   for(let i= 0; i < 3; i++){
     if(equals(board[0][0], board[1][1], board[2][2]))
       winner = board[0][0];
     if(equals(board[2][0], board[1][1], board[0][2]))
-      winner = board[2][0];
+      winner = "The winner is: " + board[2][0];
   }
   
   if(winner == null && available.length == 0){
-    return "tie";
+    return "Tie";
   } else {
     return winner;
   }
@@ -80,8 +82,6 @@ function draw() {
       let x = w * i + w/2;
       let y = h * j + h/2;
       let spot = board[i][j];
-      textSize(32);
-      strokeWeight(4); 
       if(spot == players[1]){
         noFill();
         ellipse(x, y, w/2);
