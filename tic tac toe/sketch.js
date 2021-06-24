@@ -41,7 +41,7 @@ function checkWinner() {
   //Diagonal
   for(let i= 0; i < 3; i++){
     if(equals(board[0][0], board[1][1], board[2][2]))
-      winner = board[0][0];
+      winner =  "The winner is: " + board[0][0];
     if(equals(board[2][0], board[1][1], board[0][2]))
       winner = "The winner is: " + board[2][0];
   }
