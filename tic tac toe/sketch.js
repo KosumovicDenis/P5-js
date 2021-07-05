@@ -4,6 +4,7 @@ let board = [
   ['','',''],
 ];
 
+
 let players = ['X','O'];
 
 let currentPlayer;
